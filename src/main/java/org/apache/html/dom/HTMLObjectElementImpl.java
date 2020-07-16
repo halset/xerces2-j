@@ -16,6 +16,7 @@
  */
 package org.apache.html.dom;
 
+import org.w3c.dom.Document;
 import org.w3c.dom.html.HTMLObjectElement;
 
 /**
@@ -249,6 +250,12 @@ public class HTMLObjectElementImpl
     public HTMLObjectElementImpl( HTMLDocumentImpl owner, String name )
     {
         super( owner, name );
+    }
+
+
+    @Override
+    public Document getContentDocument() {
+        return (Document) ownerNode;
     }
 
 

@@ -16,6 +16,7 @@
  */
 package org.apache.html.dom;
 
+import org.w3c.dom.Document;
 import org.w3c.dom.html.HTMLIFrameElement;
 
 /**
@@ -160,7 +161,11 @@ public class HTMLIFrameElementImpl
     {
         super( owner, name );
     }
-
+    
+    @Override
+    public Document getContentDocument() {
+        return (Document) ownerNode;
+    }
 
 }
 
